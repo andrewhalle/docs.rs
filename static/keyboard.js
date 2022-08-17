@@ -10,6 +10,13 @@
         }
     }
 
+    function clickLucky() {
+        var button = document.getElementById("i-am-feeling-lucky");
+        if (button) {
+            button.click();
+        }
+    }
+
     function focusFirstSearchResult() {
         var elem = document.querySelector(".recent-releases-container a.release");
         if (elem) {
@@ -57,6 +64,10 @@
         }
         if (ev.which === 27) { // Escape
             document.activeElement.blur();
+            return;
+        }
+        if (ev.which === 13 && ev.shiftKey) { // Shift + Enter
+            clickLucky();
             return;
         }
         var tagName = document.activeElement.tagName;
